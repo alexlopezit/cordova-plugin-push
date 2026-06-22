@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
   xmlns:android="http://schemas.android.com/apk/res/android"
-  id="@havesource/cordova-plugin-push" version="7.0.0">
+  id="cordova-plugin-push" version="7.0.0">
 
   <name>Cordova Push Plugin</name>
   <description>Enable receiving push notifications on Android and iOS devices. Android uses Firebase Cloud Messaging. iOS uses Apple APNS Notifications.</description>
@@ -89,8 +89,7 @@
     <hook type="after_prepare" src="hooks/browser/updateManifest.js"/>
   </platform>
 
-  <platform name="ios">
-    <preference name="IOS_FIREBASE_MESSAGING_VERSION" default="11.8.0"/>
+  <platform name="ios" package="swift">
 
     <config-file target="config.xml" parent="/*">
       <feature name="PushNotification">
@@ -126,15 +125,6 @@
     <header-file src="src/ios/PushPluginSettings.h"/>
 
     <framework src="PushKit.framework"/>
-
-    <podspec>
-      <config>
-        <source url="https://cdn.cocoapods.org/"/>
-      </config>
-      <pods use-frameworks="true">
-        <pod name="Firebase/Messaging" spec="$IOS_FIREBASE_MESSAGING_VERSION" />
-      </pods>
-    </podspec>
   </platform>
 
 </plugin>

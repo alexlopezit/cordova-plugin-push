@@ -1,7 +1,8 @@
 #import <Foundation/Foundation.h>
 #import <Cordova/CDVPlugin.h>
 
-@import Firebase;
+@import FirebaseCore;
+@import FirebaseMessaging;
 
 NS_ASSUME_NONNULL_BEGIN
 
