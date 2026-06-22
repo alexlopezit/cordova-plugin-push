@@ -9,7 +9,7 @@
 #import "PushPluginConstants.h"
 #import <objc/runtime.h>
 
-@implementation AppDelegate (PushPlugin)
+@implementation CDVAppDelegate (PushPlugin)
 
 // its dangerous to override a method from within a category.
 // Instead we will use method swizzling. we set this up in the load call.
@@ -34,7 +34,7 @@
     });
 }
 
-- (AppDelegate *)pushPluginSwizzledInit {
+- (CDVAppDelegate *)pushPluginSwizzledInit {
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
     center.delegate = self;
     // This actually calls the original init method over in AppDelegate. Equivilent to calling super
